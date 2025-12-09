@@ -1,0 +1,13 @@
+{
+  "domain": "ipp_maintenance",
+  "name": "IPP Maintenance",
+  "version": "0.0.1",
+  "codeowners": ["@tianciwudi"],
+  "config_flow": true,
+  "documentation": "https://github.com/tianciwudi/ipp-maintenance",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "loggers": ["deepmerge", "pyipp"],
+  "requirements": ["pyipp>=0.17.0"],
+  "zeroconf": ["_ipps._tcp.local.", "_ipp._tcp.local."]
+}
