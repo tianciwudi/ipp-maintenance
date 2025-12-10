@@ -1,7 +1,7 @@
 {
   "domain": "ipp_maintenance",
   "name": "IPP Maintenance",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "codeowners": ["@tianciwudi"],
   "config_flow": true,
   "documentation": "https://github.com/tianciwudi/ipp-maintenance",
