@@ -1,11 +1,11 @@
+# 本文件PWG格式生成部分代码引用自 open-print-stack (https://github.com/cskau/open-print-stack)
+# 原始作者：cskau
+# 对引用的部分代码进行了修改。
+
+
 import io
-
-from PIL import ImageDraw
-
+from PIL import Image, ImageDraw
 import struct
-import time
-
-from PIL import Image
 
 
 COLOR_SPACE_ENUM = {

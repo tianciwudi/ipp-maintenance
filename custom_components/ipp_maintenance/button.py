@@ -29,9 +29,17 @@ class DemoPrinterTestPageButton(ButtonEntity):
     def device_info(self):
         return {"identifiers": {(DOMAIN, self.device_id)}}
 
+    def _read_file(self, path):
+        with open(path, "rb") as f:
+            return f.read()
+
     async def async_press(self):
         """按钮按下时打印四色测试页"""
-        image_data = await self.hass.async_add_executor_job(create_cmyk_pwg)
+        path = os.path.join(os.path.dirname(__file__), "cmyk.pwg")
+        image_data = await self.hass.async_add_executor_job(self._read_file, path)
+
+        # 如果需要动态生成CMYK PWG数据，可以使用以下代码，但运行时间过久，所以还是使用预生成的pwg文件
+        # image_data = await self.hass.async_add_executor_job(create_cmyk_pwg)
 
         async with self.ipp as ipp:
             ipp.request_timeout = 60
