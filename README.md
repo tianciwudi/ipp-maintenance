@@ -15,6 +15,9 @@ This integration is based on Home Assistant's IPP integration and adds a button 
 
 或者点击: [![添加集成](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start?domain=ipp_maintenance)
 
+## 其他
+在HP Smart Tank 580-590打印机上测试过可行，打印采用image/pwg-raster格式、ipp协议，应该绝大多数支持网络打印的打印机都支持。
+
 
 ## Acknowledgments / Credits
 
