@@ -1,6 +1,5 @@
 # ipp-maintenance
-A custom component based on IPP that provides a one-click CMYK color blocks print to help prevent nozzle clogging.
-
+This integration is based on Home Assistant's IPP integration and adds a button for printing CMYK color blocks. It can be used together with HA scheduled tasks to automatically print CMYK color blocks periodically, helping prevent printhead clogging.
 本集成基于homeassistant集成IPP，新增了打印CMYK色块按钮，可配合HA定时任务实现定期自动打印CMYK色块，避免喷头堵塞问题。
 
 ## 安装
@@ -22,7 +21,7 @@ This project is based on IPP, and the PWG generation part references the Open Pr
 
 - **Open Print Stack**  
   Repository: <https://github.com/cskau/open-print-stack>  
-  Used under the terms of its respective license.
+  Thanks so much. The image/jpeg format does not support pure K printing, while the image/pwg-raster format does, but its generation rules are complex. This had troubled me for a long time, and fortunately this project accomplished it.
 
 - **Home Assistant – IPP Integration**  
   Repository: <https://github.com/home-assistant/core/tree/dev/homeassistant/components/ipp>  
@@ -36,7 +35,7 @@ We gratefully acknowledge the original authors and contributors of these project
 
 - **Open Print Stack**  
   项目地址：<https://github.com/cskau/open-print-stack>  
-  遵循其仓库中指定的许可证。
+  非常感谢，image/jpeg格式不支持纯K色打印，image/pwg-raster格式支持，但生成规则复杂，这困扰了我很久，万幸该项目实现了这一点。
 
 - **Home Assistant – IPP 组件**  
   项目地址：<https://github.com/home-assistant/core/tree/dev/homeassistant/components/ipp>  
