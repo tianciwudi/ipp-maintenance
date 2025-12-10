@@ -1,14 +1,13 @@
 import os
 from homeassistant.components.button import ButtonEntity
-from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from pyipp import IPP
 from pyipp.enums import IppOperation
 
 from .const import DOMAIN
 from .coordinator import IPPConfigEntry
+from .pwg import create_cmyk_pwg
 
 
 async def async_setup_entry(
@@ -30,14 +29,9 @@ class DemoPrinterTestPageButton(ButtonEntity):
     def device_info(self):
         return {"identifiers": {(DOMAIN, self.device_id)}}
 
-    def _read_file(self, path):
-        with open(path, "rb") as f:
-            return f.read()
-
     async def async_press(self):
         """按钮按下时打印四色测试页"""
-        path = os.path.join(os.path.dirname(__file__), "cmyk.pwg")
-        image_data = await self.hass.async_add_executor_job(self._read_file, path)
+        image_data = await self.hass.async_add_executor_job(create_cmyk_pwg)
 
         async with self.ipp as ipp:
             ipp.request_timeout = 60
@@ -46,7 +40,7 @@ class DemoPrinterTestPageButton(ButtonEntity):
                 {
                     "operation-attributes-tag": {
                         "requesting-user-name": "HA",
-                        "job-name": "HA Color Test Page",
+                        "job-name": "CMYK Page",
                         "document-format": "image/pwg-raster",
                     },
                     "data": image_data,
