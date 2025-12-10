@@ -1,5 +1,6 @@
 # ipp-maintenance
 A custom component based on IPP that provides a one-click CMYK color blocks print to help prevent nozzle clogging.
+
 本集成基于homeassistant集成IPP，新增了打印CMYK色块按钮，可配合HA定时任务实现定期自动打印CMYK色块，避免喷头堵塞问题。
 
 ## 安装
