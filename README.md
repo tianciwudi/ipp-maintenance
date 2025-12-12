@@ -18,6 +18,7 @@ This integration is based on Home Assistant's IPP integration and adds a button 
 ## 其他
 在HP Smart Tank 580-590打印机上测试过可行，打印采用image/pwg-raster格式、ipp协议，应该绝大多数支持网络打印的打印机都支持。
 
+Tested and proven to be feasible on the HP Smart Tank 580-590 printer, using the image/pwg-raster format and IPP protocol for printing. This should be compatible with the vast majority of network-enabled printers.
 
 ## Acknowledgments / Credits
 
